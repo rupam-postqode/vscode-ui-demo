@@ -9,13 +9,29 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "mySidebarView",
+          "name": "My Sidebar View"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "vscode-ui-demo.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "vscode-ui-demo.openWebview",
+        "title": "Open React Webview"
       }
     ]
   },
@@ -28,7 +44,11 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "build": "vsce package",
+    "install": "code --install-extension vscode-ui-demo-0.0.1.vsix",
+    "webview": "cd webview-ui && npm run build",
+    "dev": "npm run webview && npm run build && npm run install"
   },
   "devDependencies": {
     "@types/vscode": "^1.102.0",
