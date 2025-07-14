@@ -16,7 +16,22 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "my-activity-bar",
+          "title": "My Extension",
+          "icon": "icon.png"
+        }
+      ]
+    },
     "views": {
+      "my-activity-bar": [
+        {
+          "id": "mySidebarView",
+          "name": "Demo Sidebar"
+        }
+      ],
       "explorer": [
         {
           "id": "mySidebarView",
@@ -32,6 +47,10 @@
       {
         "command": "vscode-ui-demo.openWebview",
         "title": "Open React Webview"
+      },
+      {
+        "command": "vscode-ui-demo.openWebviewWithState",
+        "title": "Open React Webview with State"
       }
     ]
   },

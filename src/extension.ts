@@ -6,6 +6,10 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "vscode-ui-demo" is now active!');
 
 	const sidebarProvider = new SidebarProvider();
+
+	vscode.commands.registerCommand('vscode-ui-demo.openWebview', () => {
+		WebviewProvider.show(context)
+	})
 	context.subscriptions.push(
 		vscode.window.registerTreeDataProvider('mySidebarView', sidebarProvider)
 	);
