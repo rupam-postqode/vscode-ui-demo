@@ -29,13 +29,15 @@
       "my-activity-bar": [
         {
           "id": "mySidebarView",
-          "name": "Demo Sidebar"
+          "name": "Demo Sidebar",
+          "icon": "icon.png"
         }
       ],
       "explorer": [
         {
           "id": "mySidebarView",
-          "name": "My Sidebar View"
+          "name": "My Sidebar View",
+          "icon": "icon.png"
         }
       ]
     },
